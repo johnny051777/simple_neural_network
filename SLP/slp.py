@@ -56,7 +56,7 @@ class SLP:
                     self.b += lr
                 else:
                     acc +=1
-            
+            print(f"epoch:{i} ,acc;{acc/len(x)}, weight:{self.w}, bias:{self.b}") 
             self.result['epoch'].append(i)
             self.result['acc'].append(acc/len(x))
             self.result['w'].append(self.w)
@@ -78,8 +78,6 @@ class SLP:
           
 if __name__ == "__main__":
     dataset = Data()
-    
     and_model = SLP()
     and_model.fit(dataset.and_x_train , dataset.and_y_train , epoch=100, lr=0.05)
     and_model.train_vision()
-    print(and_model.show_result())
